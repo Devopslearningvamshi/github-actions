@@ -1,0 +1,16 @@
+
+- name: Clean the old Content
+  ansible.builtin.file:
+    path: "{{ app_loc }}"
+    state: absent
+
+- name: Create App directory
+  ansible.bulitin.file:
+    path: "{{ app_loc }}"
+    state: direcotry
+    owner: "{{ app_user}}"
+    group: "{{ app_user}}"
+
+-name: Download and Extract App content
+  ansible.bulitin.unachive:
+    src
